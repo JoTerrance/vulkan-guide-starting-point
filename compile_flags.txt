@@ -1,0 +1,12 @@
+-Wall
+-std=c++11
+-offset-encoding=utf-8
+-L/usr/local/lib
+-I/usr/local/include
+-I/usr/include/c++/11/
+-I./third_party/glm/
+-I./third_party/vma/
+-I./third_party/volk/
+-I./third_party/vkbootstrap/
+-I./third_party/imgui/
+-lfmt
