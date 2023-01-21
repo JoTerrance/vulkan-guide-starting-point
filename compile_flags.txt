@@ -1,9 +1,9 @@
 -Wall
--std=c++11
+-xc++
+-std=c++17
 -offset-encoding=utf-8
--L/usr/local/lib
--I/usr/local/include
--I/usr/include/c++/11/
+-Isrc/
+-I/usr/include/c++/12/
 -I./third_party/glm/
 -I./third_party/vma/
 -I./third_party/volk/
