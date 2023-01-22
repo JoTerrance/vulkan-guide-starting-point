@@ -10,3 +10,4 @@
 -I./third_party/vkbootstrap/
 -I./third_party/imgui/
 -lfmt
+-offset-encoding=utf-16

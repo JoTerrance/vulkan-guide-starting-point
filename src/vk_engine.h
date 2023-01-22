@@ -15,11 +15,14 @@ public:
 	VkSurfaceKHR _surface; // Vulkan window surface
 
   VkQueue _graphicsQueue; //queue we will submit to
-uint32_t _graphicsQueueFamily; //family of that queue
+  uint32_t _graphicsQueueFamily; //family of that queue
 
-VkCommandPool _commandPool; //the command pool for our commands
-VkCommandBuffer _mainCommandBuffer; //the buffer we will record into
-
+  VkCommandPool _commandPool; //the command pool for our commands
+  VkCommandBuffer _mainCommandBuffer; //the buffer we will record into
+  
+	VkRenderPass _renderPass;
+  //framebuffers for each swapchain image
+	std::vector<VkFramebuffer> _framebuffers;
 
   VkSwapchainKHR _swapchain; // from other articles
 	// image format expected by the windowing system
@@ -28,6 +31,9 @@ VkCommandBuffer _mainCommandBuffer; //the buffer we will record into
 	std::vector<VkImage> _swapchainImages;
 	//array of image-views from the swapchain
 	std::vector<VkImageView> _swapchainImageViews;
+
+  VkSemaphore _presentSemaphore, _renderSemaphore;
+	VkFence _renderFence;
 
 	bool _isInitialized{ false };
 	int _frameNumber {0};
@@ -50,5 +56,8 @@ private:
 	void init_vulkan();
   void init_swapchain();
   void init_commands();
-  
+  void init_default_renderpass();
+	void init_framebuffers();
+  void init_sync_structures();  
 };
+
